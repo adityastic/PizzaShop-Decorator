@@ -21,13 +21,13 @@ public class Main {
         char ch;
         Pizza pizza;
 
-        do{
+        do {
             System.out.println("Pizza Base Menu !");
             System.out.println("1. Pan Crust");
             System.out.println("2. Regular Crust");
             System.out.println("3. Thin Crust");
 
-            switch (sc.nextInt()){
+            switch (sc.nextInt()) {
                 case 1:
                     pizza = new PanCrust();
                     break;
@@ -44,7 +44,7 @@ public class Main {
             System.out.println("2. Regular Sauce");
             System.out.println("3. Pesto Sauce");
 
-            switch (sc.nextInt()){
+            switch (sc.nextInt()) {
                 case 1:
                     pizza = new HummusSauce(pizza);
                     break;
@@ -57,14 +57,14 @@ public class Main {
             }
 
             char toppingCh;
-            do{
+            do {
                 System.out.println("Toppings Menu !");
                 System.out.println("1. Jalapeno");
                 System.out.println("2. Olive");
                 System.out.println("3. Onion");
                 System.out.println("4. Tomato");
 
-                switch (sc.nextInt()){
+                switch (sc.nextInt()) {
                     case 1:
                         pizza = new JalapenoTopping(pizza);
                         break;
@@ -82,13 +82,13 @@ public class Main {
 
                 System.out.println("Do you want to add more toppings?");
                 toppingCh = sc.nextLine().charAt(0);
-            }while(toppingCh == 'y' || toppingCh == 'Y');
+            } while (toppingCh == 'y' || toppingCh == 'Y');
 
             System.out.println("Your Configuration: \n" + pizza.getDescription());
             System.out.println("Total Price for your pizza is : " + pizza.getPrice());
 
             System.out.println("Do you want to order another pizza?");
             ch = sc.nextLine().charAt(0);
-        }while(ch == 'y' || ch == 'Y');
+        } while (ch == 'y' || ch == 'Y');
     }
 }

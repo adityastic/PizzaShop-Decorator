@@ -1,25 +1,24 @@
 package com.adityagupta.pizzashop;
 
 import com.adityagupta.pizzashop.base.Pizza;
+import com.adityagupta.pizzashop.data.Topping;
 
 public abstract class ToppingDecorator implements Pizza {
     protected Pizza pizza;
-    protected int toppingPrice;
-    private String toppingName;
+    protected Topping topping;
 
-    public ToppingDecorator(Pizza pizza, int toppingPrice, String toppingName) {
+    public ToppingDecorator(Pizza pizza, Topping topping) {
         this.pizza = pizza;
-        this.toppingPrice = toppingPrice;
-        this.toppingName = toppingName;
+        this.topping = topping;
     }
 
     @Override
     public int getPrice() {
-        return pizza.getPrice() + this.toppingPrice;
+        return pizza.getPrice() + this.topping.getPrice();
     }
 
     @Override
     public String getDescription() {
-        return pizza.getDescription() + "\nTopping: " + this.toppingName;
+        return pizza.getDescription() + "\nTopping: " + this.topping.getName();
     }
 }
