@@ -65,7 +65,11 @@ public class AllOrders {
         List<Pizza> allPizzas = PizzaShopUtils.getAllPizzas();
         Collections.reverse(allPizzas);
         for (Pizza pizza : allPizzas) {
-            model.addElement("<html><pre>" + pizza.getDescription() + "<br>--------------------------------------------</pre></html>");
+            model.addElement("<html><pre>" +
+                    pizza.getDescription() +
+                    "<br><br>Price charged: " +
+                    pizza.getPrice() +
+                    "<br>--------------------------------------------</pre></html>");
         }
         return model;
     }
