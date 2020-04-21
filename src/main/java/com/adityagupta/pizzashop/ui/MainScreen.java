@@ -9,6 +9,10 @@ public class MainScreen {
 
     private JFrame frame;
 
+    public MainScreen() {
+        initialize();
+    }
+
     public static void main(String[] args) {
         EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -20,10 +24,6 @@ public class MainScreen {
                 }
             }
         });
-    }
-
-    public MainScreen() {
-        initialize();
     }
 
     private void initialize() {

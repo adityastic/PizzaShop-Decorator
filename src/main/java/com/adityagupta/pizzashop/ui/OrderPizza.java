@@ -24,6 +24,10 @@ public class OrderPizza {
     private JLabel lblError;
     private JTable crustList, sauceList, toppingList;
 
+    public OrderPizza() {
+        initialize();
+    }
+
     public static void main(String[] args) {
         EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -35,10 +39,6 @@ public class OrderPizza {
                 }
             }
         });
-    }
-
-    public OrderPizza() {
-        initialize();
     }
 
     private void initialize() {
@@ -64,7 +64,7 @@ public class OrderPizza {
                 return false;
             }
 
-		};
+        };
         scrollPane.setViewportView(crustList);
         crustList.setSelectionModel(new SingleTableSelectionModel());
 
@@ -84,7 +84,7 @@ public class OrderPizza {
                 return false;
             }
 
-		};
+        };
         scrollPane_1.setViewportView(sauceList);
         sauceList.setSelectionModel(new SingleTableSelectionModel());
 
@@ -104,7 +104,7 @@ public class OrderPizza {
                 return false;
             }
 
-		};
+        };
         scrollPane_2.setViewportView(toppingList);
 
         JLabel toppingLabel = new JLabel("Topping Selection");
@@ -173,9 +173,15 @@ public class OrderPizza {
 
     private void generateCrustList() {
         crustModel = new DefaultTableModel(new Object[][]{}, new String[]{"Item", "Price"});
+        crustModel.addRow(new Object[]{"Regular Crust", 2});
         crustModel.addRow(new Object[]{"Thin Crust", 10});
         crustModel.addRow(new Object[]{"Pan Crust", 5});
-        crustModel.addRow(new Object[]{"Regular Crust", 2});
+        crustModel.addRow(new Object[]{"Cast Iron", 3});
+        crustModel.addRow(new Object[]{"Flat Bread", 10});
+        crustModel.addRow(new Object[]{"Grilled", 9});
+        crustModel.addRow(new Object[]{"New York", 9});
+        crustModel.addRow(new Object[]{"New England", 4});
+        crustModel.addRow(new Object[]{"Stuffed", 7});
     }
 
     private void generateSauceList() {
@@ -183,6 +189,12 @@ public class OrderPizza {
         sauceModel.addRow(new Object[]{"Hummus", 2});
         sauceModel.addRow(new Object[]{"Pesto", 1});
         sauceModel.addRow(new Object[]{"Regular", 0});
+        sauceModel.addRow(new Object[]{"Barbeque", 9});
+        sauceModel.addRow(new Object[]{"Buffalo", 4});
+        sauceModel.addRow(new Object[]{"Creamy Bechamel", 7});
+        sauceModel.addRow(new Object[]{"Garlic Ranch", 5});
+        sauceModel.addRow(new Object[]{"Marinara", 1});
+        sauceModel.addRow(new Object[]{"White Garlic", 8});
     }
 
     private void generateToppingsList() {
@@ -191,5 +203,11 @@ public class OrderPizza {
         toppingModel.addRow(new Object[]{"Olive", 4});
         toppingModel.addRow(new Object[]{"Onion", 1});
         toppingModel.addRow(new Object[]{"Tomato", 3});
+        toppingModel.addRow(new Object[]{"Bacon", 5});
+        toppingModel.addRow(new Object[]{"Mushroom", 2});
+        toppingModel.addRow(new Object[]{"Pepperoni", 4});
+        toppingModel.addRow(new Object[]{"Pineapple", 3});
+        toppingModel.addRow(new Object[]{"Sausage", 6});
+        toppingModel.addRow(new Object[]{"Spinach", 5});
     }
 }

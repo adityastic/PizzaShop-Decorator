@@ -14,6 +14,10 @@ public class AllOrders {
 
     JFrame frame;
 
+    public AllOrders() {
+        initialize();
+    }
+
     public static void main(String[] args) {
         EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -25,10 +29,6 @@ public class AllOrders {
                 }
             }
         });
-    }
-
-    public AllOrders() {
-        initialize();
     }
 
     private void initialize() {

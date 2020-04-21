@@ -11,10 +11,6 @@ public abstract class BasePizza implements Pizza, Serializable {
         this.crust = new Crust();
     }
 
-    public void setPrice(int price) {
-        this.crust.setPrice(price);
-    }
-
     public void setCrustType(String crustType) {
         this.crust.setType(crustType);
     }
@@ -22,6 +18,10 @@ public abstract class BasePizza implements Pizza, Serializable {
     @Override
     public int getPrice() {
         return this.crust.getPrice();
+    }
+
+    public void setPrice(int price) {
+        this.crust.setPrice(price);
     }
 
     @Override

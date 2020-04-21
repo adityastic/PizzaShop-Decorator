@@ -1,16 +1,9 @@
 package com.adityagupta.pizzashop.ui.builders;
 
 import com.adityagupta.pizzashop.base.Pizza;
-import com.adityagupta.pizzashop.crusts.PanCrust;
-import com.adityagupta.pizzashop.crusts.RegularCrust;
-import com.adityagupta.pizzashop.crusts.ThinCrust;
-import com.adityagupta.pizzashop.sauces.HummusSauce;
-import com.adityagupta.pizzashop.sauces.PestoSauce;
-import com.adityagupta.pizzashop.sauces.RegularSauce;
-import com.adityagupta.pizzashop.toppings.JalapenoTopping;
-import com.adityagupta.pizzashop.toppings.OliveTopping;
-import com.adityagupta.pizzashop.toppings.OnionTopping;
-import com.adityagupta.pizzashop.toppings.TomatoTopping;
+import com.adityagupta.pizzashop.crusts.*;
+import com.adityagupta.pizzashop.sauces.*;
+import com.adityagupta.pizzashop.toppings.*;
 
 import java.util.List;
 
@@ -27,6 +20,24 @@ public class PizzaBuilder {
             case "Thin Crust":
                 this.pizza = new ThinCrust();
                 break;
+            case "Cast Iron":
+                this.pizza = new CastIron();
+                break;
+            case "Flat Bread":
+                this.pizza = new Flatbread();
+                break;
+            case "Grilled":
+                this.pizza = new Grilled();
+                break;
+            case "New York":
+                this.pizza = new NewYork();
+                break;
+            case "New England":
+                this.pizza = new NewEngland();
+                break;
+            case "Stuffed":
+                this.pizza = new Stuffed();
+                break;
             default:
                 this.pizza = new RegularCrust();
                 break;
@@ -41,6 +52,24 @@ public class PizzaBuilder {
                 break;
             case "Regular":
                 this.pizza = new RegularSauce(this.pizza);
+                break;
+            case "Barbeque":
+                this.pizza = new BarbequeSauce(this.pizza);
+                break;
+            case "Buffalo":
+                this.pizza = new BuffaloSauce(this.pizza);
+                break;
+            case "Creamy Bechamel":
+                this.pizza = new CreamyBechSauce(this.pizza);
+                break;
+            case "Garlic Ranch":
+                this.pizza = new GarlicRanchSauce(this.pizza);
+                break;
+            case "Marinara":
+                this.pizza = new MarinaraSauce(this.pizza);
+                break;
+            case "White Garlic":
+                this.pizza = new WhiteGarlicSauce(this.pizza);
                 break;
             default:
                 this.pizza = new PestoSauce(this.pizza);
@@ -60,6 +89,24 @@ public class PizzaBuilder {
                     break;
                 case "Onion":
                     this.pizza = new OnionTopping(this.pizza);
+                    break;
+                case "Bacon":
+                    this.pizza = new BaconTopping(this.pizza);
+                    break;
+                case "Mushroom":
+                    this.pizza = new MushroomTopping(this.pizza);
+                    break;
+                case "Pepperoni":
+                    this.pizza = new PepperoniTopping(this.pizza);
+                    break;
+                case "Pineapple":
+                    this.pizza = new PineappleTopping(this.pizza);
+                    break;
+                case "Sausage":
+                    this.pizza = new SausageTopping(this.pizza);
+                    break;
+                case "Spinach":
+                    this.pizza = new SpinachTopping(this.pizza);
                     break;
                 default:
                     this.pizza = new TomatoTopping(this.pizza);
