@@ -1,11 +1,10 @@
 package com.adityagupta.pizzashop.sel_model;
 
-import javax.swing.DefaultListSelectionModel;
-import javax.swing.ListSelectionModel;
+import javax.swing.*;
 
 public class SingleTableSelectionModel extends DefaultListSelectionModel {
 
-    public SingleTableSelectionModel () {
+    public SingleTableSelectionModel() {
         setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
     }
 

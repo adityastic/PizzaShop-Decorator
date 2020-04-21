@@ -1,8 +1,8 @@
 package com.adityagupta.pizzashop.base;
 
-import java.io.Serializable;
-
 import com.adityagupta.pizzashop.data.Crust;
+
+import java.io.Serializable;
 
 public abstract class BasePizza implements Pizza, Serializable {
     protected Crust crust;

@@ -1,9 +1,9 @@
 package com.adityagupta.pizzashop.decorators;
 
-import java.io.Serializable;
-
 import com.adityagupta.pizzashop.base.Pizza;
 import com.adityagupta.pizzashop.data.Topping;
+
+import java.io.Serializable;
 
 public abstract class ToppingDecorator implements Pizza, Serializable {
     protected Pizza pizza;
