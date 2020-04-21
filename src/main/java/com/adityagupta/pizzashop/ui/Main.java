@@ -1,4 +1,4 @@
-package com.adityagupta.pizzashop;
+package com.adityagupta.pizzashop.ui;
 
 import com.adityagupta.pizzashop.base.Pizza;
 import com.adityagupta.pizzashop.crusts.PanCrust;

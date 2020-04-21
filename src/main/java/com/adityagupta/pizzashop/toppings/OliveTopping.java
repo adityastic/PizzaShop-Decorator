@@ -1,8 +1,8 @@
 package com.adityagupta.pizzashop.toppings;
 
-import com.adityagupta.pizzashop.ToppingDecorator;
 import com.adityagupta.pizzashop.base.Pizza;
 import com.adityagupta.pizzashop.data.Topping;
+import com.adityagupta.pizzashop.decorators.ToppingDecorator;
 
 public class OliveTopping extends ToppingDecorator {
 

@@ -1,9 +1,11 @@
-package com.adityagupta.pizzashop;
+package com.adityagupta.pizzashop.decorators;
+
+import java.io.Serializable;
 
 import com.adityagupta.pizzashop.base.Pizza;
 import com.adityagupta.pizzashop.data.Topping;
 
-public abstract class ToppingDecorator implements Pizza {
+public abstract class ToppingDecorator implements Pizza, Serializable {
     protected Pizza pizza;
     protected Topping topping;
 
@@ -19,6 +21,6 @@ public abstract class ToppingDecorator implements Pizza {
 
     @Override
     public String getDescription() {
-        return pizza.getDescription() + "\nTopping: " + this.topping.getName();
+        return pizza.getDescription() + "<br>Topping: " + this.topping.getName();
     }
 }

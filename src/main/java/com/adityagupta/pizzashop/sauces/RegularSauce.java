@@ -1,8 +1,8 @@
 package com.adityagupta.pizzashop.sauces;
 
-import com.adityagupta.pizzashop.SauceDecorator;
 import com.adityagupta.pizzashop.base.Pizza;
 import com.adityagupta.pizzashop.data.Sauce;
+import com.adityagupta.pizzashop.decorators.SauceDecorator;
 
 public class RegularSauce extends SauceDecorator {
 
