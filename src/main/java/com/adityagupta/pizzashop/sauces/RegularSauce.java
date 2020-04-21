@@ -1,23 +1,11 @@
 package com.adityagupta.pizzashop.sauces;
 
-import com.adityagupta.pizzashop.BasePizza;
-import com.adityagupta.pizzashop.PizzaDecorator;
+import com.adityagupta.pizzashop.SauceDecorator;
+import com.adityagupta.pizzashop.base.Pizza;
 
-public class RegularSauce extends PizzaDecorator {
+public class RegularSauce extends SauceDecorator {
 
-    int saucePrice = 0;
-
-    public RegularSauce(BasePizza pizza) {
-        super(pizza);
-    }
-
-    @Override
-    public int getPrice() {
-        return pizza.getPrice() + saucePrice;
-    }
-
-    @Override
-    public String getDescription() {
-        return pizza.getDescription() + "\nSauce: Regular";
+    public RegularSauce(Pizza pizza) {
+        super(pizza, 0, "Regular");
     }
 }

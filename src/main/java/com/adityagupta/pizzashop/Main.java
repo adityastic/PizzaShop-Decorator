@@ -1,6 +1,6 @@
 package com.adityagupta.pizzashop;
 
-
+import com.adityagupta.pizzashop.base.Pizza;
 import com.adityagupta.pizzashop.crusts.PanCrust;
 import com.adityagupta.pizzashop.crusts.RegularCrust;
 import com.adityagupta.pizzashop.crusts.ThinCrust;
@@ -19,7 +19,7 @@ public class Main {
 
     public static void main(String[] args) {
         char ch;
-        BasePizza pizza;
+        Pizza pizza;
 
         do{
             System.out.println("Pizza Base Menu !");

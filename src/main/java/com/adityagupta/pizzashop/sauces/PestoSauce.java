@@ -1,23 +1,11 @@
 package com.adityagupta.pizzashop.sauces;
 
-import com.adityagupta.pizzashop.BasePizza;
-import com.adityagupta.pizzashop.PizzaDecorator;
+import com.adityagupta.pizzashop.SauceDecorator;
+import com.adityagupta.pizzashop.base.Pizza;
 
-public class PestoSauce extends PizzaDecorator {
+public class PestoSauce extends SauceDecorator {
 
-    int saucePrice = 1;
-
-    public PestoSauce(BasePizza pizza) {
-        super(pizza);
-    }
-
-    @Override
-    public int getPrice() {
-        return pizza.getPrice() + saucePrice;
-    }
-
-    @Override
-    public String getDescription() {
-        return pizza.getDescription() + "\nSauce: Pesto";
+    public PestoSauce(Pizza pizza) {
+        super(pizza, 1, "Pesto");
     }
 }

@@ -1,23 +1,11 @@
 package com.adityagupta.pizzashop.toppings;
 
-import com.adityagupta.pizzashop.BasePizza;
-import com.adityagupta.pizzashop.PizzaDecorator;
+import com.adityagupta.pizzashop.ToppingDecorator;
+import com.adityagupta.pizzashop.base.Pizza;
 
-public class OnionTopping extends PizzaDecorator {
+public class OnionTopping extends ToppingDecorator {
 
-    int toppingPrice = 1;
-
-    public OnionTopping(BasePizza pizza) {
-        super(pizza);
-    }
-
-    @Override
-    public int getPrice() {
-        return pizza.getPrice() + toppingPrice;
-    }
-
-    @Override
-    public String getDescription() {
-        return pizza.getDescription() + "\nTopping: Onion";
+    public OnionTopping(Pizza pizza) {
+        super(pizza, 1, "Onion");
     }
 }

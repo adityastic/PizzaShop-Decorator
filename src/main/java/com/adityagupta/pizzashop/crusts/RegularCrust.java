@@ -1,14 +1,10 @@
 package com.adityagupta.pizzashop.crusts;
 
-import com.adityagupta.pizzashop.BasePizza;
+import com.adityagupta.pizzashop.base.BasePizza;
 
 public class RegularCrust extends BasePizza {
     public RegularCrust() {
-        super(2);
-    }
-
-    @Override
-    public String getDescription() {
-        return "Crust : Regular Crust";
+        setPrice(2);
+        setCrustType("Regular");
     }
 }
