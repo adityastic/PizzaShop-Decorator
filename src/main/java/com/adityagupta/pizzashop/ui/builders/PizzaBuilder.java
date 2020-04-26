@@ -4,6 +4,8 @@ import com.adityagupta.pizzashop.base.Pizza;
 import com.adityagupta.pizzashop.crusts.*;
 import com.adityagupta.pizzashop.sauces.*;
 import com.adityagupta.pizzashop.toppings.*;
+import com.adityagupta.pizzashop.ui.wrappers.SauceWrapper;
+import com.adityagupta.pizzashop.ui.wrappers.ToppingsWrapper;
 
 import java.util.List;
 
@@ -46,6 +48,7 @@ public class PizzaBuilder {
     }
 
     public PizzaBuilder buildWithSauce(String selectedSauce) {
+    	this.pizza = new SauceWrapper(this.pizza);
         switch (selectedSauce) {
             case "Hummus":
                 this.pizza = new HummusSauce(this.pizza);
@@ -79,6 +82,7 @@ public class PizzaBuilder {
     }
 
     public PizzaBuilder buildWithToppings(List<String> selectedToppings) {
+    	this.pizza = new ToppingsWrapper(this.pizza);
         for (String topping : selectedToppings) {
             switch (topping) {
                 case "Jalapeno":

@@ -16,7 +16,7 @@ public abstract class BasePizza implements Pizza, Serializable {
     }
 
     @Override
-    public int getPrice() {
+    public double getPrice() {
         return this.crust.getPrice();
     }
 
@@ -26,6 +26,6 @@ public abstract class BasePizza implements Pizza, Serializable {
 
     @Override
     public String getDescription() {
-        return "Crust: " + this.crust.getType();
+        return "<br>Pizza Crust: " + this.crust.getType() + "<br>";
     }
 }

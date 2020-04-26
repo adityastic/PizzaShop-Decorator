@@ -2,7 +2,7 @@ package com.adityagupta.pizzashop.data;
 
 import java.io.Serializable;
 
-public class Topping implements Serializable {
+public class Topping extends PizzaComponent implements Serializable {
     int price;
     String name;
 
@@ -14,7 +14,7 @@ public class Topping implements Serializable {
         this.name = name;
     }
 
-    public int getPrice() {
+    public double getPrice() {
         return price;
     }
 

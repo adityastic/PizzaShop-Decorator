@@ -5,6 +5,7 @@ import com.adityagupta.pizzashop.expections.SelectSauceException;
 import com.adityagupta.pizzashop.expections.SelectToppingsException;
 import com.adityagupta.pizzashop.sel_model.SingleTableSelectionModel;
 import com.adityagupta.pizzashop.ui.utils.PizzaShopUtils;
+import com.adityagupta.pizzashop.utils.OfferUtils;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
@@ -26,19 +27,6 @@ public class OrderPizza {
 
     public OrderPizza() {
         initialize();
-    }
-
-    public static void main(String[] args) {
-        EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                try {
-                    OrderPizza window = new OrderPizza();
-                    window.frame.setVisible(true);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-        });
     }
 
     private void initialize() {
@@ -186,28 +174,32 @@ public class OrderPizza {
 
     private void generateSauceList() {
         sauceModel = new DefaultTableModel(new Object[][]{}, new String[]{"Item", "Price"});
-        sauceModel.addRow(new Object[]{"Hummus", 2});
-        sauceModel.addRow(new Object[]{"Pesto", 1});
-        sauceModel.addRow(new Object[]{"Regular", 0});
-        sauceModel.addRow(new Object[]{"Barbeque", 9});
-        sauceModel.addRow(new Object[]{"Buffalo", 4});
-        sauceModel.addRow(new Object[]{"Creamy Bechamel", 7});
-        sauceModel.addRow(new Object[]{"Garlic Ranch", 5});
-        sauceModel.addRow(new Object[]{"Marinara", 1});
-        sauceModel.addRow(new Object[]{"White Garlic", 8});
+        sauceModel.addRow(getToppingObject("Hummus", 2));
+        sauceModel.addRow(getToppingObject("Pesto", 1));
+        sauceModel.addRow(getToppingObject("Regular", 0));
+        sauceModel.addRow(getToppingObject("Barbeque", 9));
+        sauceModel.addRow(getToppingObject("Buffalo", 4));
+        sauceModel.addRow(getToppingObject("Creamy Bechamel", 7));
+        sauceModel.addRow(getToppingObject("Garlic Ranch", 5));
+        sauceModel.addRow(getToppingObject("Marinara", 1));
+        sauceModel.addRow(getToppingObject("White Garlic", 8));
     }
 
     private void generateToppingsList() {
         toppingModel = new DefaultTableModel(new Object[][]{}, new String[]{"Item", "Price"});
-        toppingModel.addRow(new Object[]{"Jalapeno", 2});
-        toppingModel.addRow(new Object[]{"Olive", 4});
-        toppingModel.addRow(new Object[]{"Onion", 1});
-        toppingModel.addRow(new Object[]{"Tomato", 3});
-        toppingModel.addRow(new Object[]{"Bacon", 5});
-        toppingModel.addRow(new Object[]{"Mushroom", 2});
-        toppingModel.addRow(new Object[]{"Pepperoni", 4});
-        toppingModel.addRow(new Object[]{"Pineapple", 3});
-        toppingModel.addRow(new Object[]{"Sausage", 6});
-        toppingModel.addRow(new Object[]{"Spinach", 5});
+        toppingModel.addRow(getToppingObject("Jalapeno", 2));
+        toppingModel.addRow(getToppingObject("Olive", 4));
+        toppingModel.addRow(getToppingObject("Onion", 1));
+        toppingModel.addRow(getToppingObject("Tomato", 3));
+        toppingModel.addRow(getToppingObject("Bacon", 5));
+        toppingModel.addRow(getToppingObject("Mushroom", 2));
+        toppingModel.addRow(getToppingObject("Pepperoni", 4));
+        toppingModel.addRow(getToppingObject("Pineapple", 3));
+        toppingModel.addRow(getToppingObject("Sausage", 6));
+        toppingModel.addRow(getToppingObject("Spinach", 5));
+    }
+    
+    public Object[] getToppingObject(String name, double price){
+    	return new Object[] {name, (OfferUtils.getOffer() > 0)? (price - (price * ((double)OfferUtils.getOffer() / 100))) + " ("+OfferUtils.getOffer()+"% Off) " : price};
     }
 }

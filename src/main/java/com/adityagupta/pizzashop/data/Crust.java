@@ -3,13 +3,18 @@ package com.adityagupta.pizzashop.data;
 import java.io.Serializable;
 
 public class Crust implements Serializable {
-    int price;
+    double price;
     String type;
 
     public Crust() {
     }
 
-    public int getPrice() {
+    public Crust(double price, String type) {
+		this.price = price;
+		this.type = type;
+	}
+
+	public double getPrice() {
         return price;
     }
 
@@ -24,4 +29,8 @@ public class Crust implements Serializable {
     public void setType(String name) {
         this.type = name;
     }
+
+	public String getName() {
+		return type;
+	}
 }

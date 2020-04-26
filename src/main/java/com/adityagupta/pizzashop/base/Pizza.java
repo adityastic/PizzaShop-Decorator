@@ -1,7 +1,7 @@
 package com.adityagupta.pizzashop.base;
 
 public interface Pizza {
-    int getPrice();
+    double getPrice();
 
     String getDescription();
 }

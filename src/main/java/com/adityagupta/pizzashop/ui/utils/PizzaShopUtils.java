@@ -17,7 +17,7 @@ public class PizzaShopUtils {
                 .build();
 
         saveOrder(pizza);
-        return pizza.getDescription() + "\nTotal Price: " + pizza.getPrice();
+        return pizza.getDescription() + "\n\nTotal Price: " + pizza.getPrice();
     }
 
     private static void saveOrder(Pizza pizza) {

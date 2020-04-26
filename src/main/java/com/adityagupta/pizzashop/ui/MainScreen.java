@@ -40,7 +40,7 @@ public class MainScreen {
                 window.frame.setVisible(true);
             }
         });
-        btnNewButton.setBounds(90, 101, 117, 29);
+        btnNewButton.setBounds(90, 65, 117, 29);
         frame.getContentPane().add(btnNewButton);
 
         JButton btnPreviousOrders = new JButton("All Orders");
@@ -50,7 +50,17 @@ public class MainScreen {
                 window.frame.setVisible(true);
             }
         });
-        btnPreviousOrders.setBounds(90, 160, 117, 29);
+        btnPreviousOrders.setBounds(90, 113, 117, 29);
         frame.getContentPane().add(btnPreviousOrders);
+        
+        JButton btnSettings = new JButton("Settings");
+        btnSettings.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent e) {
+                Settings window = new Settings();
+                window.frame.setVisible(true);
+        	}
+        });
+        btnSettings.setBounds(90, 169, 117, 29);
+        frame.getContentPane().add(btnSettings);
     }
 }
